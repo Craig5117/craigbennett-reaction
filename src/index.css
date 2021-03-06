@@ -47,7 +47,7 @@ body {
 }
 
 body {
-  margin: 0 0 1.5em 0;
+  margin: 0 0 .8em 0;
   padding: 0;
   font-weight: 600;
   line-height: 1.5;
@@ -158,6 +158,55 @@ header {
 
 /* Portfolio styles */
 
+
+
+.card {
+  background-color: var(--text-theme);
+  border: solid 4px var(--text-theme);
+  color: var(--accent-theme);
+  text-align: center;
+}
+
+
+
+.project {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.project-title {
+  
+  text-align: center;
+  font-family: "Secular One";
+  font-weight: 900;
+  font-size: 1.5em;
+  margin-top: .5em;
+  text-shadow: -2px 2px #898989;
+}
+
+.site-link {
+  background-color: var(--accent-theme);
+  color: var(--text-theme);
+  font-size: 1.5em;
+  padding: .2em 1.2em;
+  border-radius: 15px;
+}
+
+
+.site-link:hover {
+  background-color: #660708;
+}
+
+.icon-link {
+  font-size: 3em;
+  color: var(--accent-theme);
+}
+
+.icon-link:hover {
+  color: #660708;
+}
+
 /* Contact styles */
 
 /* Resume styles */
@@ -179,7 +228,6 @@ footer {
 }
 
 footer p {
-  vertical-align: middle;
   font-size: .75em;
 }
 
