@@ -13,7 +13,7 @@ theme text 1(cultured): #F5F3F4
 }
 
 :root {
-  --bg-theme: #161A1D;
+  --bg-theme: #0B090A;
   --accent-theme: #A4161A;
   --text-theme: #F5F3F4;
 }
@@ -47,7 +47,7 @@ body {
 }
 
 body {
-  margin: 0;
+  margin: 0 0 1.5em 0;
   padding: 0;
   font-weight: 600;
   line-height: 1.5;
@@ -56,15 +56,17 @@ body {
   background: var(--bg-theme);
   color: var(--text-theme);
   font-family: 'Oxygen';
+
 }
 
 .section-heading {
   background-color: var(--text-theme);
   color: var(--accent-theme);
   margin-left: -48px;
+  margin-bottom: 3em;
   width: 17em;
   height: 4em;
- 
+  box-shadow: 6px 4px #898989;
 }
 
 /* Header styles*/
@@ -107,13 +109,15 @@ h3 {
 .navbar-light .navbar-nav .nav-link.active { 
   color: #BA181B;
   text-shadow: 0 0 15px #EA5D5F;
+  outline: none;
 }
+
 
 .navbar-light .navbar-nav .nav-link {
   font-family: 'Secular One';
   color: var(--text-theme);
   font-size: 1.3em;
-  
+  outline: none;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
@@ -149,4 +153,46 @@ header {
 
 .bio-text {
   font-size: 1em;
+  text-shadow: 1px 1px #898989; 
 }
+
+/* Footer styles */
+footer {
+  width: 100%;
+  border-top: solid 16px var(--accent-theme);
+  padding-top: 1.75em;
+}
+
+
+.contact-link {
+  font-size: 2.2em;
+}
+
+.footer-links {
+  width: 15rem;
+}
+
+footer p {
+  vertical-align: middle;
+  font-size: .75em;
+}
+
+.footer-logo {
+  font-size: 3em;
+}
+
+.icon {
+  position: relative;
+  top: 8px;
+}
+
+footer p span {
+  font-size: 1.75em;
+}
+
+footer a:hover { 
+  text-decoration: none; 
+}
+
+
+
