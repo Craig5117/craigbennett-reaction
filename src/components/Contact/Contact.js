@@ -1,52 +1,101 @@
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-// import { validateEmail } from '../../utils/helpers'
+import { validateEmail } from '../../utils/helpers'
 
 function ContactForm() {
     const [validated, setValidated] = useState(false);
-
-  const handleSubmit = (e) => {
-    const form = e.currentTarget;
+    const [loading, setLoading] = useState(false);
+    const [inputE1, setInputE1] = useState('');
+    const [inputE2, setInputE2] = useState('');
+    const [inputE3, setInputE3] = useState('')
+    const [disabled, setDisabled] =useState(false);
+    // const [formState, setFormState] = useState({
+    //     name: '',
+    //     email: '',
+    //     message: '',
+    //   });
+  const handleSubmit = async (e) => {
+    // const form = e.currentTarget;
+    setValidated(true)
     e.preventDefault();
-    if (form.checkValidity() === false) {
+    if (!validated && !disabled ) {
+        setValidated(false)
+    }   
+
+    setLoading(true)
+    
+    let res = await fetch('/api-endpoint', {
+    body: JSON.stringify({
+        name: inputE1,
+        email: inputE2,
+        message: inputE3
+    }),
+    headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+        Authorization: 'Bearer somecodehere'
+    },
+    method: "POST",
+    credentials: "include"
+    })
+    // mailchimp, sendgrid, mailgun, nodemail, AWS SES
+    // if (form.checkValidity() === false) {
         
-      e.stopPropagation();
-    } else {
-        
-        console.log(formState)
+    const { error, data } = await res.json();
+    if (error) {
+        console.log(error)
+        return
     }
-    setValidated(true);
+    console.log(inputE1, inputE2, inputE3)
+    setLoading(false);
+    setInputE1('');
+    setInputE2('');
+    setInputE3('');
+    
+    return data.json();
+
+    //   e.stopPropagation();
+    // } else {
+        
+    // console.log(formState)
+    // }
+    // setValidated(true);
   };
 
-    const [formState, setFormState] = useState({
-        name: '',
-        email: '',
-        message: '',
-      });
-      const { name, email, message } = formState;
-
-      function handleChange(e) {
-        // if (e.target.name === 'email') {
-        //   const isValid = validateEmail(e.target.value);
-        //   console.log(isValid);
-        //   if (!isValid) {
-        //     setValidated(false);
-        //   }
-        // //     setErrorMessage('');
-        // //   }
-        // } 
-        //   if (!e.target.value.length) {
-        //     setErrorMessage(`${e.target.name} is required.`);
-        //   } else {
-        //     setErrorMessage('');
-        //   }
-        // }
-       
-        // if (!errorMessage) {
-          setFormState({ ...formState, [e.target.name]: e.target.value });
-        // }
-        // console.log('errorMessage', errorMessage);
+  const handlingValidation = useCallback(() => {
+      if (!validated) {
+          setDisabled(!validateEmail(inputE2) || (!inputE1) || (!inputE2) || (!inputE3))
       }
+  }, [inputE1, inputE2, inputE3, validated])
+
+  useEffect(() => {
+      handlingValidation()
+  }, [handlingValidation])
+
+    //   const { name, email, message } = formState;
+
+    //   function handleChange(e) {
+    //     // if (e.target.name === 'email') {
+    //     //   const isValid = validateEmail(e.target.value);
+    //     //   console.log(isValid);
+    //     //   if (!isValid) {
+    //     //     setValidated(false);
+    //     //   }
+    //     // //     setErrorMessage('');
+    //     // //   }
+    //     // } 
+    //     //   if (!e.target.value.length) {
+    //     //     setErrorMessage(`${e.target.name} is required.`);
+    //     //   } else {
+    //     //     setErrorMessage('');
+    //     //   }
+    //     // }
+       
+    //     // if (!errorMessage) {
+    //       setFormState({ ...formState, [e.target.name]: e.target.value });
+    //     // }
+    //     // console.log('errorMessage', errorMessage);
+    //   }
     
     //   function handleSubmit(e) {
     //     e.preventDefault();
@@ -65,26 +114,35 @@ function ContactForm() {
       <Form className="contact-form mx-4 mb-4" noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group controlId="formName">
           <Form.Label>Your Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter your name" name="name" onBlur={handleChange} defaultValue={name} required/>
+          <Form.Control type="text" placeholder="Enter your name" name="name" onChange={setInputE1} required/>
+          {/* {!inputE1 && <div>Please enter your name</div>} */}
+          {/* {!inputE1 ? (
+          <>
+            <Gallery currentCategory={currentCategory}></Gallery>
+            <About></About>
+          </>
+        ) : (
+          <ContactForm></ContactForm>
+        )} */}
           <Form.Control.Feedback type="invalid">
             Please provide your name.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter your email" name="email" onBlur={handleChange} defaultValue={email} required/>
+          <Form.Control type="email" placeholder="Enter your email" name="email" onChange={setInputE2} required/>
           <Form.Control.Feedback type="invalid">
             Please provide a valid email address.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group controlId="messageTextarea">
           <Form.Label>Your Message</Form.Label>
-          <Form.Control as="textarea" rows={5} name="message" onBlur={handleChange} defaultValue={message} required/>
+          <Form.Control as="textarea" rows={5} name="message" onChange={setInputE3} required/>
           <Form.Control.Feedback type="invalid">
             Please enter the text of your message.
           </Form.Control.Feedback>
         </Form.Group>
-        <Button type="submit" className="submit-button ml-3">
+        <Button type="submit" className="submit-button ml-3" loading={loading}>
           Submit
         </Button>
       </Form>
