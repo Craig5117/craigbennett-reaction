@@ -24,6 +24,20 @@ function ContactForm() {
     } else {
         console.log('valid and ready')
         setValidationState('my-valid')
+        let res = await fetch('/', {
+            body: JSON.stringify({
+                name: formState.name,
+                email: formState.email,
+                message: formState.message
+            }),
+            headers: {
+                Accept: "application/json, text/plain, */*",
+                "Content-Type": "application/json",
+                Authorization: 'Bearer somecodehere'
+            },
+            method: "POST",
+            credentials: "include"
+            })
         console.log(formState)
     }
     setValidated(true);
