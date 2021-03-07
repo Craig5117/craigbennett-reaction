@@ -65,21 +65,21 @@ function ContactForm() {
       <Form className="contact-form mx-4 mb-4" noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group controlId="formName">
           <Form.Label>Your Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter your name" name="name" onBlur={handleChange} defaultValue={name} required/>
+          <Form.Control type="text" placeholder="Enter your name" name="name" onChange={handleChange} defaultValue={name} required/>
           <Form.Control.Feedback type="invalid">
             Please provide your name.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter your email" name="email" onBlur={handleChange} defaultValue={email} required/>
+          <Form.Control type="email" placeholder="Enter your email" name="email" onChange={handleChange} defaultValue={email} required/>
           <Form.Control.Feedback type="invalid">
             Please provide a valid email address.
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group controlId="messageTextarea">
           <Form.Label>Your Message</Form.Label>
-          <Form.Control as="textarea" rows={5} name="message" onBlur={handleChange} defaultValue={message} required/>
+          <Form.Control as="textarea" rows={5} name="message" onChange={handleChange} defaultValue={message} required/>
           <Form.Control.Feedback type="invalid">
             Please enter the text of your message.
           </Form.Control.Feedback>
