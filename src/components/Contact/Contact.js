@@ -1,22 +1,9 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-// import { validateEmail } from '../../utils/helpers'
+import { validateEmail } from '../../utils/helpers';
 
 function ContactForm() {
     const [validated, setValidated] = useState(false);
-
-  const handleSubmit = (e) => {
-    const form = e.currentTarget;
-    e.preventDefault();
-    if (form.checkValidity() === false) {
-        
-      e.stopPropagation();
-    } else {
-        
-        console.log(formState)
-    }
-    setValidated(true);
-  };
 
     const [formState, setFormState] = useState({
         name: '',
@@ -25,33 +12,33 @@ function ContactForm() {
       });
       const { name, email, message } = formState;
 
-      function handleChange(e) {
-        // if (e.target.name === 'email') {
-        //   const isValid = validateEmail(e.target.value);
-        //   console.log(isValid);
-        //   if (!isValid) {
-        //     setValidated(false);
-        //   }
-        // //     setErrorMessage('');
-        // //   }
-        // } 
-        //   if (!e.target.value.length) {
-        //     setErrorMessage(`${e.target.name} is required.`);
-        //   } else {
-        //     setErrorMessage('');
-        //   }
-        // }
-       
-        // if (!errorMessage) {
-          setFormState({ ...formState, [e.target.name]: e.target.value });
-        // }
-        // console.log('errorMessage', errorMessage);
-      }
+      const [validationState, setValidationState] = useState('');
+
+  const handleSubmit = (e) => {
+    const form = e.currentTarget;
+    e.preventDefault();
+    if (form.checkValidity() === false || !validateEmail(email)) {
+        console.log('not valid')
+        setValidationState('my-invalid')
+      e.stopPropagation();
+    } else {
+        console.log('valid and ready')
+        setValidationState('my-valid')
+        console.log(formState)
+    }
+    setValidated(true);
+  };
+
     
-    //   function handleSubmit(e) {
-    //     e.preventDefault();
-    //     console.log(formState);
-    //   }
+
+      function handleChange(e) {
+          if (validateEmail(email)) {
+            setValidationState('my-valid')
+          } else {
+            setValidationState('my-invalid')
+          }
+          setFormState({ ...formState, [e.target.name]: e.target.value });
+      }
   return (
     <section>
       <div className="d-flex">
@@ -72,7 +59,7 @@ function ContactForm() {
         </Form.Group>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter your email" name="email" onChange={handleChange} defaultValue={email} required/>
+          <Form.Control type="email" placeholder="Enter your email" name="email" className={validationState} onChange={handleChange} defaultValue={email} required/>
           <Form.Control.Feedback type="invalid">
             Please provide a valid email address.
           </Form.Control.Feedback>
@@ -93,3 +80,5 @@ function ContactForm() {
 }
 
 export default ContactForm;
+
+ 
