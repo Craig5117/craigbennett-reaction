@@ -207,6 +207,10 @@ header {
   color: #660708;
 }
 
+.details {
+  min-height: 156px;
+}
+
 /* Contact styles */
 
 /* Resume styles */
