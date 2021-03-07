@@ -16,15 +16,17 @@ function ContactForm() {
     //   });
   const handleSubmit = async (e) => {
     // const form = e.currentTarget;
-    setValidated(true)
+   
     e.preventDefault();
     if (!validated && !disabled ) {
         setValidated(false)
+        handlingValidation();
     }   
 
     setLoading(true)
-    
-    let res = await fetch('/api-endpoint', {
+    setValidated(true)
+    if (!disabled) {
+        let res = await fetch('/', {
     body: JSON.stringify({
         name: inputE1,
         email: inputE2,
@@ -38,13 +40,13 @@ function ContactForm() {
     method: "POST",
     credentials: "include"
     })
-    // mailchimp, sendgrid, mailgun, nodemail, AWS SES
-    // if (form.checkValidity() === false) {
-        
+    // error !loading ? condition : loading && !error : condition ? datacondition : <></>
     const { error, data } = await res.json();
-    if (error) {
+    if (error && !loading) {
         console.log(error)
         return
+    } else {
+        <div>loading...</div>
     }
     console.log(inputE1, inputE2, inputE3)
     setLoading(false);
@@ -53,6 +55,12 @@ function ContactForm() {
     setInputE3('');
     
     return data.json();
+    }
+    
+    // mailchimp, sendgrid, mailgun, nodemail, AWS SES
+    // if (form.checkValidity() === false) {
+        
+    
 
     //   e.stopPropagation();
     // } else {
@@ -142,7 +150,8 @@ function ContactForm() {
             Please enter the text of your message.
           </Form.Control.Feedback>
         </Form.Group>
-        <Button type="submit" className="submit-button ml-3" loading={loading}>
+
+        <Button type="submit" className="submit-button ml-3">
           Submit
         </Button>
       </Form>
