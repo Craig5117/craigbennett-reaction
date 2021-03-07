@@ -16,6 +16,8 @@ theme text 1(cultured): #F5F3F4
   --bg-theme: #0B090A;
   --accent-theme: #A4161A;
   --text-theme: #F5F3F4;
+  --accent-dark: #660708;
+  --accent-light: #EA5D5F;
 }
 
 .bg-theme-1 {
@@ -73,12 +75,12 @@ body {
 h1 {
   font-size: 1.5em;
   font-weight: 600;
-  text-shadow: -3px 2px #660708;
+  text-shadow: -3px 2px var(--accent-dark);
 }
 h2 {
   font-size: 1em;
   width: 160px;
-  text-shadow: -3px 2px #660708;
+  text-shadow: -3px 2px var(--accent-dark);
 }
 
 h3 {
@@ -108,7 +110,7 @@ h3 {
 
 .navbar-light .navbar-nav .nav-link.active { 
   color: #BA181B;
-  text-shadow: 0 0 15px #EA5D5F;
+  text-shadow: 0 0 15px var(--accent-light);
   outline: none;
 }
 
@@ -195,7 +197,7 @@ header {
 
 
 .site-link:hover {
-  background-color: #660708;
+  background-color: var(--accent-dark);
 }
 
 .icon-link {
@@ -204,7 +206,7 @@ header {
 }
 
 .icon-link:hover {
-  color: #660708;
+  color: var(--accent-dark);
 }
 
 .details {
@@ -212,6 +214,18 @@ header {
 }
 
 /* Contact styles */
+
+.submit-button {
+  background-color: var(--accent-theme);
+  outline: #BA181B;
+  border-color: #BA181B;
+}
+
+.submit-button:hover {
+  background-color: var(--accent-dark);
+  outline: #BA181B;
+  border-color: #BA181B;
+}
 
 /* Resume styles */
 
