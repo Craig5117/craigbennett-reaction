@@ -1,7 +1,9 @@
 import React from 'react';
-import { Row, Col, Container, Card } from 'react-bootstrap';
+import { Row, Container } from 'react-bootstrap';
+import Skill from '../Skill/Skill';
 
 function Resume() {
+    const skills = [{name: "Front-end",  skillset: ["HTML", "CSS", "JavaScript", "Bootstrap", "Bulma", "Materialize", "React", "React Bootstrap"]}, {name: "Back-end", skillset: ["Node.js", "Express.js", "MySQL", "Sequelize", "MongoDB", "Mongoose", "MongoDB Atlas", "Inquirer.js"]}]
   return (
     <section>
       <div className="d-flex">
@@ -28,52 +30,14 @@ function Resume() {
           <div className="bg-theme-2 skew skills-header mt-4 ml-1 ml-md-5">
             <h4 className="anti-skew">My Skills</h4>
           </div>
-          <Row>
-            <Col xs={12}></Col>
-          </Row>
           <Row className="skills d-flex justify-content-center">
-            <Col xs={11} md={4} lg={3} className="mt-5">
-              <Card className="skill-card">
-                <Card.Title className="skill-card-header">
-                  <h5>
-                    Front-end <i className="fas fa-laptop-code"></i>
-                  </h5>
-                </Card.Title>
-                <Card.Body>
-                  <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>Bootstrap</li>
-                    <li>Bulma</li>
-                    <li>Materialize</li>
-                    <li>React</li>
-                    <li>React Bootstrap</li>
-                  </ul>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col xs={11} md={4} lg={3} className="m-5">
-              <Card className="skill-card">
-                <Card.Title className="skill-card-header">
-                  <h5>
-                    Back-end <i className="fas fa-database"></i>
-                  </h5>
-                </Card.Title>
-                <Card.Body>
-                  <ul>
-                    <li>Node.js</li>
-                    <li>Express.js</li>
-                    <li>MySQL</li>
-                    <li>Sequelize</li>
-                    <li>MongoDB</li>
-                    <li>Mongoose</li>
-                    <li>MongoDB Atlas</li>
-                    <li>Inquirer</li>
-                  </ul>
-                </Card.Body>
-              </Card>
-            </Col>
+          {skills.map((skillset, i) => ( 
+          <Skill
+            name={skillset.name} 
+            skillset={skillset.skillset}
+            key={i}
+            />
+        ))}
           </Row>
         </Container>
       </div>
