@@ -54,7 +54,7 @@ function ContactForm() {
           setFormState({ ...formState, [e.target.name]: e.target.value });
       }
   return (
-    <section>
+    <section className="mb-5">
       <div className="d-flex">
         <div className="skew section-heading">
           <h3 className="anti-skew">Contact Me</h3>
