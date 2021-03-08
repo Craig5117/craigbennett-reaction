@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/craigbennett-reaction/static/css/main.d56465d4.chunk.css",
-    "main.js": "/craigbennett-reaction/static/js/main.1eede879.chunk.js",
-    "main.js.map": "/craigbennett-reaction/static/js/main.1eede879.chunk.js.map",
+    "main.js": "/craigbennett-reaction/static/js/main.c72f1015.chunk.js",
+    "main.js.map": "/craigbennett-reaction/static/js/main.c72f1015.chunk.js.map",
     "runtime-main.js": "/craigbennett-reaction/static/js/runtime-main.fb303e6c.js",
     "runtime-main.js.map": "/craigbennett-reaction/static/js/runtime-main.fb303e6c.js.map",
     "static/css/2.fabbef47.chunk.css": "/craigbennett-reaction/static/css/2.fabbef47.chunk.css",
@@ -27,6 +27,6 @@
     "static/css/2.fabbef47.chunk.css",
     "static/js/2.f7573352.chunk.js",
     "static/css/main.d56465d4.chunk.css",
-    "static/js/main.1eede879.chunk.js"
+    "static/js/main.c72f1015.chunk.js"
   ]
 }
