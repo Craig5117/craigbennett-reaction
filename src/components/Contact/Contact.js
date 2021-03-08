@@ -60,10 +60,10 @@ function ContactForm() {
           <h3 className="anti-skew">Contact Me</h3>
         </div>
       </div>
-      <p className="mx-3">You may use the form below to send me a message. You may also click on
+      <p className="contact-text">You may use the form below to send me a message. You may also click on
           one of the blue links below to find me on GitHub, LinkedIn, or send me
           an email with your default email app.</p>
-      <Form className="contact-form mx-4 mb-4" noValidate validated={validated} onSubmit={handleSubmit}>
+      <Form className="contact-form" noValidate validated={validated} onSubmit={handleSubmit}>
         <Form.Group controlId="formName">
           <Form.Label>Your Name</Form.Label>
           <Form.Control type="text" placeholder="Enter your name" name="name" onChange={handleChange} defaultValue={name} required/>

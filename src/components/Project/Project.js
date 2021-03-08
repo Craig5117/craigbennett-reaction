@@ -21,7 +21,7 @@ function Project(props) {
     return (
         <Col xs={11} md={6} className="card-slot mb-5">
           <Accordion defaultActiveKey="0">
-            <Card>
+            <Card className="project-card">
               <Card.Title className="project-title">{project.title}</Card.Title>
               <Card.Header>
                 <Accordion.Toggle
@@ -42,7 +42,7 @@ function Project(props) {
                 />
               </Accordion.Collapse>
             </Card>
-            <Card>
+            <Card className="project-card">
               <Card.Header>
                 <Accordion.Toggle
                   as={Card.Header}
