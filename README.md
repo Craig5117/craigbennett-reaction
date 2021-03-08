@@ -1,9 +1,10 @@
 # Craig Bennett Reaction
+
+![Screenshot of Craig Bennett's portfolio](./screenshots/screenshot_1.jpg)
+
 ## Description 
 
 A portfolio of my work. Built with React!
-
-
 
 ---
 
