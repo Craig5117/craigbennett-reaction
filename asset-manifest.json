@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/craigbennett-reaction/static/css/main.96af1d86.chunk.css",
+    "main.css": "/craigbennett-reaction/static/css/main.d56465d4.chunk.css",
     "main.js": "/craigbennett-reaction/static/js/main.e13ca681.chunk.js",
     "main.js.map": "/craigbennett-reaction/static/js/main.e13ca681.chunk.js.map",
     "runtime-main.js": "/craigbennett-reaction/static/js/runtime-main.fb303e6c.js",
@@ -12,7 +12,7 @@
     "static/js/3.e41377b3.chunk.js.map": "/craigbennett-reaction/static/js/3.e41377b3.chunk.js.map",
     "index.html": "/craigbennett-reaction/index.html",
     "static/css/2.fabbef47.chunk.css.map": "/craigbennett-reaction/static/css/2.fabbef47.chunk.css.map",
-    "static/css/main.96af1d86.chunk.css.map": "/craigbennett-reaction/static/css/main.96af1d86.chunk.css.map",
+    "static/css/main.d56465d4.chunk.css.map": "/craigbennett-reaction/static/css/main.d56465d4.chunk.css.map",
     "static/js/2.f7573352.chunk.js.LICENSE.txt": "/craigbennett-reaction/static/js/2.f7573352.chunk.js.LICENSE.txt",
     "static/media/0.webp": "/craigbennett-reaction/static/media/0.df2ca9f0.webp",
     "static/media/1.webp": "/craigbennett-reaction/static/media/1.d98478cf.webp",
@@ -26,7 +26,7 @@
     "static/js/runtime-main.fb303e6c.js",
     "static/css/2.fabbef47.chunk.css",
     "static/js/2.f7573352.chunk.js",
-    "static/css/main.96af1d86.chunk.css",
+    "static/css/main.d56465d4.chunk.css",
     "static/js/main.e13ca681.chunk.js"
   ]
 }
