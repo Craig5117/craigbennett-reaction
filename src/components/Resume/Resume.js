@@ -26,7 +26,7 @@ function Resume() {
         </div>
       </div>
       <div className="skills-border mb-5">
-        <Container className="skills-container">
+        <Container className="skills-container pb-5">
           <div className="bg-theme-2 skew skills-header mt-4 ml-1 ml-md-5">
             <h4 className="anti-skew">My Skills</h4>
           </div>

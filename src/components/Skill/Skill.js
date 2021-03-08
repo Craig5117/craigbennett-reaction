@@ -16,7 +16,7 @@ function Skill(props) {
       <Card className="skill-card">
         <Card.Title className="skill-card-header">
           <h5>
-            {name} {renderSkillIcon}
+            {name} {renderSkillIcon()}
           </h5>
         </Card.Title>
         <Card.Body>
