@@ -23,11 +23,11 @@ function About() {
             developer, click the link to my resume above.
           </p>
           <p className="py-2">
-            My work as a linguist required required creative problem-solving
-            skills and a focus on consumer impact. I have experience managing
-            multiple projects and teams. I work hard and strive for excellence
-            in everything that I do. These same skills serve me well when it
-            comes to meeting client expectations for their web needs.
+            My work as a linguist required creative problem-solving skills and a
+            focus on consumer impact. I have experience managing multiple
+            projects and teams. I work hard and strive for excellence in
+            everything that I do. These same skills serve me well when it comes
+            to meeting client expectations for their web needs.
           </p>
           <p className="py-2">
             When I am not working, I enjoy spending time with my family, hiking,
