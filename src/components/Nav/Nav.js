@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-
+// renders Navigation bar. handlePageChange is a state setter passed down from App
 function Navigation(props) {
   const { handlePageChange } = props;
   return (
@@ -9,6 +9,7 @@ function Navigation(props) {
         <Nav.Link
           href="#about"
           className="link-style"
+          // on click render about
           onClick={() => {
             handlePageChange('About');
           }}
@@ -18,6 +19,7 @@ function Navigation(props) {
         <Nav.Link
           href="#portfolio"
           className="link-style"
+          // on click render Portfolio
           onClick={() => {
             handlePageChange('Portfolio');
           }}
@@ -27,6 +29,7 @@ function Navigation(props) {
         <Nav.Link
           href="#contact"
           className="link-style"
+          // on click render contact
           onClick={() => {
             handlePageChange('Contact');
           }}
@@ -36,6 +39,7 @@ function Navigation(props) {
         <Nav.Link
           href="#resume"
           className="link-style"
+          // on click render resume
           onClick={() => {
             handlePageChange('Resume');
           }}

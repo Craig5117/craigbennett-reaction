@@ -1,22 +1,26 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { validateEmail } from '../../utils/helpers';
-
+// renders contact section
 function ContactForm() {
+  // this is Bootstraps built in validation
   const [validated, setValidated] = useState(false);
-
+  // this collects the form data from user input
   const [formState, setFormState] = useState({
     name: '',
     email: '',
     message: '',
   });
   const { name, email, message } = formState;
-
+  // this is my hook that will apply a style to override Bootstrap's validation styles
+  // it uses the class names "my-valid" and "my-invalid"
   const [validationState, setValidationState] = useState('');
 
   const handleSubmit = async (e) => {
     const form = e.currentTarget;
+
     e.preventDefault();
+    // the first condition is from Bootstrap, the second is my custom email validator
     if (form.checkValidity() === false || !validateEmail(email)) {
       console.log('not valid');
       setValidationState('my-invalid');
@@ -42,7 +46,8 @@ function ContactForm() {
     }
     setValidated(true);
   };
-
+  // this function monitors for changes to the form after the initial submit
+  // the conditional runs my custom validator on the email and changes the style to match validation state
   function handleChange(e) {
     if (validateEmail(email)) {
       setValidationState('my-valid');

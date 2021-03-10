@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from '../Nav/Nav';
-
+// renders header handlePageChange is a state setter passed down from App
+// it is just passed on to Navigation in this function
 function Header(props) {
   const { handlePageChange } = props
   return (

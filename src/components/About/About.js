@@ -1,5 +1,5 @@
 import React from 'react';
-
+// renders the about section
 function About() {
   return (
     <section>

@@ -5,9 +5,11 @@ import Footer from './components/Footer/Footer';
 import Portfolio from './components/Portfolio/Portfolio';
 import Contact from './components/Contact/Contact';
 import Resume from './components/Resume/Resume'
-
+// renders main layout of app
 function App() {
+  // sets the page state to control rendering of sections
   const [currentPage, handlePageChange] = useState('About');
+  // toggles different sections based on user clicks in navigation
   const renderPage = () => {
     switch(currentPage) {
       case 'Portfolio':

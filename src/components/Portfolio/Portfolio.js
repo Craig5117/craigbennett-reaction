@@ -1,8 +1,9 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Project from '../Project/Project'
-
+// renders portfolio
 function Portfolio() {
+  // an array of project info that will be mapped and passed to project
     const projects = [
         {
             title: "SLP Goalden",

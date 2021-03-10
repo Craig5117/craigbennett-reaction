@@ -1,12 +1,12 @@
 import React from 'react';
 import { Accordion, Card, Col } from 'react-bootstrap';
-
+ // renders a single project card
 function Project(props) {
     const {
         project,
         i
     } = props;
-
+    // renders a different link icon for video tutorials
     const renderLinkDisplay = () => {
         if (i === 4 || i === 5) {
             return (
@@ -17,7 +17,7 @@ function Project(props) {
             <span className="site-link">Site</span>
         )
     }
-
+    
     return (
         <Col xs={11} md={6} className="card-slot mb-5">
           <Accordion defaultActiveKey="0">

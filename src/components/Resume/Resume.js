@@ -1,8 +1,9 @@
 import React from 'react';
 import { Row, Container } from 'react-bootstrap';
 import Skill from '../Skill/Skill';
-
+// renders resume
 function Resume() {
+  // an array of two objecs that will be mapped to create the front and back end skill cards
     const skills = [{name: "Front-end",  skillset: ["HTML", "CSS", "JavaScript", "Bootstrap", "Bulma", "Materialize", "React", "React Bootstrap"]}, {name: "Back-end", skillset: ["Node.js", "Express.js", "MySQL", "Sequelize", "MongoDB", "Mongoose", "MongoDB Atlas", "Inquirer.js"]}]
   return (
     <section>

@@ -1,5 +1,5 @@
 import React from 'react';
-
+// renders footer
 function Footer() {
     return (
         <footer className="d-flex align-items-center flex-column">
