@@ -8,7 +8,7 @@ function Project(props) {
     } = props;
     // renders a different link icon for video tutorials
     const renderLinkDisplay = () => {
-        if (i === 4 || i === 5) {
+        if (i === 4) {
             return (
                 <i className="fas fa-film icon-link icon"></i>
             )
