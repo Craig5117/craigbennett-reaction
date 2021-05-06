@@ -19,7 +19,7 @@ A portfolio of my work. Built with React!
 
 ## Website
 
-https://craig5117.github.io/craigbennett-reaction/
+http://craigbennett-reaction.herokuapp.com/
 
 ---
 
